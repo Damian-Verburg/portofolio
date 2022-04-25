@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="eng">
+<link rel="stylesheet" href='KipSpelCSS.css'>
+<title>Egg Clicker</title>
+	<head>
+		<body>
+			<h2> <strong>Upgrades:</strong></h2>
+			<h1><span id= Score ></span></h1>
+			<div class="button_cont"><button class="upgrade" onClick="farmer()" id= "button1" target="_blank">Farmer upgrade</button></div>
+			<div class="button_cont"><button class="upgrade" onClick="cupgrade()" id= "button2" target="_blank">Cursor upgrade</button></div>
+			
+			
+			<div class="topnav" id="myTopnav">
+				<a href="KipSpel.html" class="active" id="link"> egg clicker</a>
+				<a href="aboutus.html" id="link">About the creators</a>
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				  <i class="fa fa-bars"></i>
+				</a>
+			  </div>
+			
+				<br>
+				
+			<button onclick="Add()" type="button" class="Score" id="Score"><img src=Kip.jpg class='Score'></button>
+
+				
+			<script type="text/javascript">
+				var Score = document.getElementById('Score');
+				var load = document.getElementById('Score').innerHTML;
+				var save = document.getElementById('Score').innerHTML;
+				var cupgrade1 = 0;
+				var Farmer = 0;
+				var Farmer1= 250;
+				var gekocht = false;
+				button1.disabled = true;
+
+
+				
+				
+				function cupgrade() {
+					var Score = document.getElementById('Score').innerHTML;
+					if (Score >= 10){
+						var Score = (Score - 10)
+						document.getElementById('Score').innerHTML = (Score)
+						cupgrade1++;
+							
+					} else {
+						alert('u heeft 10 punten nodig voor deze upgrade')
+					} if(cupgrade1){
+						Score = Score + 1;
+						document.getElementById('Score').innerHTML = (Score)
+						alert('u heeft de upgrade gekocht')
+						button1.disabled = false
+						gekocht = true;
+						console.log(gekocht);
+					}
+				}
+
+
+				function Add(){
+					var Score = document.getElementById('Score').innerHTML;
+					Score++;
+					document.getElementById('Score').innerHTML = Score;
+					if (Score > 0){
+						var audio = new Audio('Sound1.mp3');
+						audio.play();
+					}
+					if (cupgrade1 > 0) {
+						var Score = document.getElementById('Score').innerHTML;
+						Score++;
+						document.getElementById('Score').innerHTML = Score;
+					}
+				}
+
+					
+					
+					function farmer() {
+						var Score = parseInt(document.getElementById('Score').innerHTML);
+						if (Score >= Farmer1) {
+							if(gekocht == true){
+							console.log(Farmer1)
+							Score = (Score - 250);
+							document.getElementById('Score').innerHTML = (Score)
+							console.log(Score)
+							alert("u heeft de upgrade gekocht")
+							setInterval(function(){ 
+								var Score = parseInt(document.getElementById('Score').innerHTML);
+								Score++;
+								document.getElementById('Score').innerHTML = (Score);
+							}, 1000);; 
+						}
+						} else {
+							alert("u heeft 250 punten nodig voor deze upgrade")
+						}
+					}
+
+				</script>
+				<br><br>
+				<div class="button_cont" ,align="center"><a class="opslaan_laden" onclick="save('opslaan')" target="_blank" >save</a></div>
+				<div class="button_cont" ,align="center"><a class="opslaan_laden" onclick="load('laden')" target="_blank" >load</a></div>
+
+
+				<script type="text/javascript">
+
+				var opslaan = 'opslaan'
+				var laden = 'laden'
+   			
+
+				function save() {
+				try {
+					Score = document.getElementById('Score').innerHTML 
+					localStorage.setItem('Score', JSON.stringify(Score));
+				} catch(err) {
+				console.log('kan niet opgeslagen worden')
+				}
+				console.log('game is opgeslagen');
+				alert("uw game is opgeslagen :)");
+				}
+
+				function load() {
+				Score = parseInt(localStorage.getItem('Score').replace(/"/g,""));
+				document.getElementById('Score').innerHTML = Score;
+				}
+				
+
+			</script>
+		</body>	
+	</head>
+</html>

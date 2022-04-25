@@ -1,0 +1,46 @@
+
+
+
+*{
+	background-color:black;
+}
+
+
+#wrapper{
+
+	width:2000px;
+	height:900px;
+}
+
+#container{
+	width :1500px;
+	height:769px;
+	margin:0 auto;
+	background-image:url("stage.png");
+	position:relative;
+	cursor: crosshair;
+
+}
+
+
+
+#duck{
+	background:transparent;
+	position:absolute;
+	left:750px;
+	top:370px;
+	border:1px solid red;
+	transition:0,4s linear;
+	right:500px;
+		height:120px;
+		width:120px;
+		}
+
+
+
+
+#hit, #miss, #counter1, #counter2, #counter3,#shots{
+
+color:white;
+font-size:30px;
+}

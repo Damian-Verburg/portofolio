@@ -1,0 +1,51 @@
+* {
+  position: center;
+}
+
+button {
+  border: 1px solid #0066cc;
+  background-color: #0099cc;
+  color: #ffffff;
+  padding: 5px 10px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 2px;
+}
+
+button:hover {
+  border: 1px solid #0099cc;
+  background-color: #00aacc;
+  color: #ffffff;
+  padding: 5px 10px;
+  box-shadow: 0 12px 16px 0 #00aacc, 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  cursor: not-allowed;
+}
+
+div {
+  padding: 5px 10px;
+}
+
+#game-container {
+  text-align: center;
+  width: 1500px;
+  height: 769px;
+  margin: 0 auto;
+  cursor: crosshair;
+  background-color: black;
+  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body {
+  font-family: "Cabin";
+  font-size: 22px;
+}
